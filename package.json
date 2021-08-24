@@ -1,0 +1,25 @@
+{
+  "name": "tiktok-discord-embed",
+  "description": "Listens in discord chats for tiktok links, then resends them using the worker host.",
+  "author": "Dustin Rouillard <code@dstn.to>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "run": "ts-node src/index.ts",
+    "build": "tsc",
+    "dev": "nodemon --config nodemon.json"
+  },
+  "dependencies": {
+    "@dustinrouillard/fastify-utilities": "^1.2.25",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "@types/ws": "^7.4.7",
+    "nodemon": "^2.0.12",
+    "typescript": "^4.3.5"
+  }
+}

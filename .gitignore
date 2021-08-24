@@ -1,0 +1,9 @@
+node_modules
+
+dist
+
+*.js
+
+.env
+.env.*
+!.env.example
