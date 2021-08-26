@@ -3,5 +3,5 @@
     "src"
   ],
   "ext": "ts",
-  "exec": "ts-node --files src/server.ts"
+  "exec": "ts-node --files src/index.ts"
 }
