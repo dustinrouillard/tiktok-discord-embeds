@@ -3,7 +3,7 @@ import Discord from 'discord.js';
 import { SetConfig, Log } from '@dustinrouillard/fastify-utilities/modules/logger';
 SetConfig({ disableTimestamp: true, logColor: 'reset', debugColor: 'yellow' });
 
-import { DiscordToken, TiktokRegex, WorkerHost } from './config';
+import { DiscordToken, GuildBlacklist, TiktokRegex, WorkerHost } from './config';
 
 const client = new Discord.Client();
 
@@ -11,6 +11,7 @@ client.on('ready', () => Log(`Connected as ${client.user?.tag}`));
 
 client.on('message', (msg) => {
   if (msg.author.id == client.user?.id) return;
+  if (msg.guild && GuildBlacklist.includes(msg.guild.id)) return;
 
   const matched = TiktokRegex.exec(msg.content);
   if (matched && matched[0]) {
