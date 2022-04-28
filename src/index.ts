@@ -19,7 +19,7 @@ client.on('message', (msg) => {
     const url = new URL(matched[0]);
     if (!['vm.tiktok.com', 'tiktok.com', 'www.tiktok.com'].includes(url.host)) return;
 
-    if (['tiktok.com', 'www.tiktok.com'].includes(url.host) && !url.pathname.includes('@') && !url.pathname.includes('/video/')) return;
+    if (['tiktok.com', 'www.tiktok.com'].includes(url.host) && !url.pathname.includes('@') && !url.pathname.includes('/video/') && !url.pathname.includes('/t/')) return;
 
     if (msg.content == matched[0] && msg.deletable) msg.delete();
 
